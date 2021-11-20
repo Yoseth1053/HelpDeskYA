@@ -1,0 +1,32 @@
+﻿@page
+@model HelpDeskApp.Frontend.Pages.Index1Model
+@{
+}
+
+<h1>Listado de Empleados</h1>
+<a class="btn btn-primary" asp-page="./Create1">Crear Empleado</a>
+<table class="table table-dark table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Documento</th>
+      <th scope="col">Nombres</th>
+      <th scope="col">Apellidos</th>
+      <th scope="col">Celular</th>
+      <th scope="col">Correo</th>
+      <th scope="col">Tipo de Empleado</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach (var empleado in Model.empleados)
+    {
+        <tr>
+          <td>@empleado.EmpDocumento</td>
+          <td>@empleado.EmpNombres</td>
+          <td>@empleado.EmpApellidos</td>
+          <td>@empleado.EmpCelular</td>
+          <td>@empleado.EmpCorreo</td>
+          <td>@empleado.TipoEmpleado</td>
+        </tr>
+    }
+  </tbody>
+</table>

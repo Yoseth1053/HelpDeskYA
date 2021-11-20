@@ -1,6 +1,6 @@
 namespace HelpDeskApp.Dominio
 {
-    public class Empleados
+    public class Empleado
     {
         public int Id {get ; set;}
         public string EmpDocumento {get ; set;}

@@ -2,10 +2,9 @@ using System;
 
 namespace HelpDeskApp.Dominio
 {
-    public class Incidentes
+    public class Incidente
     {
         public int Id {get ; set;}
-        public string IncCodigo {get ; set;}
         public string IncDescripcion {get ; set;}
         public string IncEstado {get ; set;}
         public DateTime IncFechaReporte {get ; set;}

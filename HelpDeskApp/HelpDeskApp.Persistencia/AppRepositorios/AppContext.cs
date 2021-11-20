@@ -5,7 +5,13 @@ namespace HelpDeskApp.Persistencia
 {
     public class AppContext : DbContext
     {
-        public DbSet<Empleados> Empleados {get; set;}
+        public DbSet<Empleado> Empleados {get; set;}
+        public DbSet<Ambiente> Ambientes {get; set;}
+        public DbSet<Incidente> Incidentes {get; set;}
+        public DbSet<Inventario> Inventarios {get; set;}
+        public DbSet<Login> Login {get; set;}
+        public DbSet<MantenimientoCorrectivo> MantenimientoCorrectivos {get; set;}
+        public DbSet<MantenimientoPreventivo> MantenimientoPreventivos {get; set;}
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
