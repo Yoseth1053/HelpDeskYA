@@ -1,0 +1,49 @@
+﻿@page
+@using HelpDeskApp.Dominio;
+@model HelpDeskApp.Frontend.Pages.Empleados.Create1Model
+@{
+}
+<h1>Nuevo Empleado</h1>
+<form method="post">
+
+    <div class="row g-3">
+        <div class="col">
+        <label asp-for="empleado.EmpDocumento">Documento</label>
+        <input asp-for="empleado.EmpDocumento" class="form-control">
+          </div>
+    </div>
+    <div class="row g-3">
+        <div class="col">
+        <label asp-for="empleado.EmpNombres">Nombres</label>
+        <input asp-for="empleado.EmpNombres" class="form-control">
+          </div>
+    </div>
+
+    <div class="row g-3">
+        <div class="col">
+        <label asp-for="empleado.EmpApellidos">Apellidos</label>
+        <input asp-for="empleado.EmpApellidos" class="form-control">
+        </div>
+    </div>
+
+    <div class="row g-3">
+        <div class="col">
+        <label asp-for="empleado.EmpCelular">Celular</label>
+        <input asp-for="empleado.EmpCelular" class="form-control">
+        </div>
+    </div>
+    <div class="row g-3">
+        <div class="col">
+        <label asp-for="empleado.EmpCorreo">Correo</label>
+        <input asp-for="empleado.EmpCorreo" class="form-control">
+        </div>
+    </div>
+    <div class="row g-3">
+        <div class="col">
+      <label asp-for="empleado.TipoEmpleado">Tipo de Empleado</label>
+        <select asp-for="empleado.TipoEmpleado" asp-items="Html.GetEnumSelectList<TipoEmpleado>()" class="form-control"></select>
+    </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Crear Empleado</button>
+</form>
+<a class="btn btn-secondary" asp-page="./Index1">Volver</a>

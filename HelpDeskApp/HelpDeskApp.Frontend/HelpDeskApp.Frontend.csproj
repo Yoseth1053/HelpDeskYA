@@ -11,4 +11,9 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\HelpDeskApp.Dominio\HelpDeskApp.Dominio.csproj" />
+    <ProjectReference Include="..\HelpDeskApp.Persistencia\HelpDeskApp.Persistencia.csproj" />
+  </ItemGroup>
+
 </Project>

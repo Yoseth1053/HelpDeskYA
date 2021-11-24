@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using HelpDeskApp.Dominio;
 using HelpDeskApp.Persistencia;
 
-namespace HelpDeskApp.Frontend.Pages
+namespace HelpDeskApp.Frontend.Pages.Empleados
 {
     public class Index1Model : PageModel
     {
