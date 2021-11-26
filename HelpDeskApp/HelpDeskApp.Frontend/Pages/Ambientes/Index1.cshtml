@@ -1,0 +1,28 @@
+﻿@page
+@using HelpDeskApp.Dominio
+@model HelpDeskApp.frontend.Pages.Ambientes.Index1Model
+@{
+}
+
+<h1>Listado de Ambientes</h1>
+<a class="btn btn-primary" asp-page="./Create1">Crear Ambiente</a>
+<table class="table table-dark table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Ubicación</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    @foreach (var ambiente in Model.ambientes)
+    {
+        <tr>
+          <td>@ambiente.Id</td>
+          <td>@ambiente.AmbNombre</td>
+          <td>@ambiente.AmbUbicacion</td>
+         </tr>
+    }
+  </tbody>
+</table>

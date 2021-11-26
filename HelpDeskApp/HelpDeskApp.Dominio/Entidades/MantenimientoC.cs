@@ -2,7 +2,7 @@ using System;
 
 namespace HelpDeskApp.Dominio
 {
-    public class MantenimientoCorrectivo
+    public class MantenimientoC
     {
         public int Id {get ; set;}
         public Incidente Incidente {get ; set;}

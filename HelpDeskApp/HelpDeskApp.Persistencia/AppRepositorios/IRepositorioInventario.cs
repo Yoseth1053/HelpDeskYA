@@ -5,6 +5,7 @@ namespace HelpDeskApp.Persistencia
 {
     public interface IRepositorioInventario
     {
-         
+        IEnumerable<Inventario> GetAllInventarios();
+        Inventario AddInventario(Inventario inventario);
     }
 }

@@ -1,0 +1,33 @@
+﻿@page
+@using HelpDeskApp.Dominio
+@model HelpDeskApp.Frontend.Pages.Incidentes.Index1Model
+@{
+}
+
+<h1>Listado de Incidentes</h1>
+<a class="btn btn-primary" asp-page="./Create1">Crear Incidente</a>
+<table class="table table-dark table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">IncDescripcion</th>
+      <th scope="col">IncEstado</th>
+      <th scope="col">IncFechaReporte</th>
+      <th scope="col">IncFechaAtencion</th>
+      <th scope="col">EmpDocumento</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach (var incidente in Model.incidentes)
+    {
+        <tr>
+          <td>@incidente.Id</td>
+          <td>@incidente.IncDescripcion</td>
+          <td>@incidente.IncEstado</td>
+          <td>@incidente.IncFechaReporte</td>
+          <td>@incidente.IncFechaAtencion</td>
+          <td>@incidente.EmpDocumento</td>
+        </tr>
+    }
+  </tbody>
+</table>

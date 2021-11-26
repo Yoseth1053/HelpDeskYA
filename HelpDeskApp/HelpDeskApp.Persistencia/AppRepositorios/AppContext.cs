@@ -10,8 +10,8 @@ namespace HelpDeskApp.Persistencia
         public DbSet<Incidente> Incidentes {get; set;}
         public DbSet<Inventario> Inventarios {get; set;}
         public DbSet<Login> Login {get; set;}
-        public DbSet<MantenimientoCorrectivo> MantenimientoCorrectivos {get; set;}
-        public DbSet<MantenimientoPreventivo> MantenimientoPreventivos {get; set;}
+        public DbSet<MantenimientoC> MantenimientosC {get; set;}
+        public DbSet<MantenimientoP> MantenimientosP {get; set;}
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

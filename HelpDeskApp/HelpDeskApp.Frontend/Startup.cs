@@ -26,6 +26,8 @@ namespace HelpDeskApp.Frontend
         {
             services.AddRazorPages();
             services.AddSingleton<IRepositorioEmpleado, RepositorioEmpleado>();
+            services.AddSingleton<IRepositorioAmbiente, RepositorioAmbiente>();
+            services.AddSingleton<IRepositorioIncidente, RepositorioIncidente>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

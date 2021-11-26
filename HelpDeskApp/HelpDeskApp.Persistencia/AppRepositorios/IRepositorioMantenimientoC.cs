@@ -5,6 +5,7 @@ namespace HelpDeskApp.Persistencia
 {
     public interface IRepositorioMantenimientoC
     {
-         
+        IEnumerable<MantenimientoC> GetAllMantenimientosC();
+        MantenimientoC AddMantenimientoC(MantenimientoC mantenimientoC);
     }
 }
