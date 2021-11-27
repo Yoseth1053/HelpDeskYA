@@ -1,7 +1,7 @@
 using System.Collections.Generic;
-using System.Linq;
+
 using HelpDeskApp.Dominio;
-using Microsoft.EntityFrameworkCore;
+
 
 namespace HelpDeskApp.Persistencia
 {
@@ -15,9 +15,35 @@ namespace HelpDeskApp.Persistencia
             _appContext.SaveChanges();
             return ambienteAdicionado.Entity;
         }
+         void IRepositorioAmbiente.DeleteAmbiente(int idAmbiente)
+        {
+            var ambienteEncontrado = _appContext.Ambientes.Find(idAmbiente);
+            if (ambienteEncontrado == null)
+                return;
+            _appContext.Ambientes.Remove(ambienteEncontrado);
+            _appContext.SaveChanges();
+        }
         IEnumerable<Ambiente> IRepositorioAmbiente.GetAllAmbientes()
         {
             return _appContext.Ambientes;
+        }
+        Ambiente IRepositorioAmbiente.GetAmbiente(int idAmbiente)
+        {
+            return _appContext.Ambientes.Find(idAmbiente);
+        }
+        Ambiente IRepositorioAmbiente.UpdateAmbiente(Ambiente ambiente)
+        {
+            var ambienteEncontrado = _appContext.Ambientes.Find(ambiente.Id);
+            if (ambienteEncontrado != null)
+            {
+                ambienteEncontrado.Id = ambiente.Id;
+                ambienteEncontrado.AmbNombre = ambiente.AmbNombre;
+                ambienteEncontrado.AmbUbicacion = ambiente.AmbUbicacion;
+                
+                //ambienteEncontrado.RegistroRethus = ambiente.RegistroRethus;
+                _appContext.SaveChanges();
+            }
+            return ambienteEncontrado;
         }
             
     }

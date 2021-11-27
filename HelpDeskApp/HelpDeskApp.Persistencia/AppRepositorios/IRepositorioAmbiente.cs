@@ -7,5 +7,8 @@ namespace HelpDeskApp.Persistencia
     {
         IEnumerable<Ambiente> GetAllAmbientes();
         Ambiente AddAmbiente(Ambiente ambiente);
+        Ambiente UpdateAmbiente(Ambiente ambiente);
+        void DeleteAmbiente(int idAmbiente);    
+        Ambiente GetAmbiente(int idAmbiente);
     }
 }

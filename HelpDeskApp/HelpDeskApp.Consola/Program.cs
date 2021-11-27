@@ -9,6 +9,7 @@ namespace HelpDeskApp.Consola
     {
 
         private static IRepositorioEmpleado _repoEmpleado = new RepositorioEmpleado();
+        private static IRepositorioAmbiente _repoAmbiente = new RepositorioAmbiente();
 
         static void Main(string[] args)
         {
@@ -16,7 +17,11 @@ namespace HelpDeskApp.Consola
 
             //AddEmpleado();
             //BuscarEmpleado();
-            MostrarEmpleados();
+            //MostrarEmpleados();
+            //AddAmbiente();
+            //BuscarAmbiente();
+            MostrarAmbientes();
+
         }
         private static void AddEmpleado()
         {
@@ -39,5 +44,37 @@ namespace HelpDeskApp.Consola
                 Console.WriteLine(empleado.EmpNombres + " " + empleado.EmpApellidos);
             }
         }
+        private static void AddAmbiente()
+        {
+            var ambiente = new Ambiente
+            {
+                
+                AmbNombre = "Electronica",
+                AmbUbicacion = "Automatizacion"
+            };
+            _repoAmbiente.AddAmbiente(ambiente);
+        }
+        
+        private static void BuscarAmbiente(int idAmbiente)
+        {
+            var ambiente = _repoAmbiente.GetAmbiente(idAmbiente);
+            Console.WriteLine(ambiente.AmbNombre+" "+ambiente.AmbUbicacion);
+        }
+        
+        private static void MostrarAmbientes()
+        {
+            IEnumerable<Ambiente> ambientes = _repoAmbiente.GetAllAmbientes();
+            foreach (var ambiente in ambientes)
+            {
+                Console.WriteLine(ambiente.AmbNombre + " " + ambiente.AmbUbicacion);
+            }
+        }
+
+        private static void EliminarAmbiente(int idAmbiente)
+        {
+            _repoAmbiente.DeleteAmbiente(idAmbiente);
+            Console.WriteLine("ambiente Eliminado");
+        }
+
     }
 }
