@@ -20,7 +20,9 @@ namespace HelpDeskApp.Consola
             //MostrarEmpleados();
             //AddAmbiente();
             //BuscarAmbiente();
-            MostrarAmbientes();
+            //MostrarAmbientes();
+            //EliminarAmbiente(1);
+
 
         }
         private static void AddEmpleado()
@@ -43,6 +45,16 @@ namespace HelpDeskApp.Consola
             {
                 Console.WriteLine(empleado.EmpNombres + " " + empleado.EmpApellidos);
             }
+        }
+        private static void BuscarEmpleado(int idEmpleado)
+        {
+            var empleado = _repoEmpleado.GetEmpleado(idEmpleado);
+            Console.WriteLine(empleado.EmpDocumento+" "+empleado.EmpNombres);
+        }
+        private static void EliminarEmpleado(int idEmpleado)
+        {
+            _repoEmpleado.DeleteEmpleado(idEmpleado);
+            Console.WriteLine("empleado Eliminado");
         }
         private static void AddAmbiente()
         {
@@ -76,5 +88,40 @@ namespace HelpDeskApp.Consola
             Console.WriteLine("ambiente Eliminado");
         }
 
+
+        private static void AddIncidente()
+        {
+            var incidente = new Incidente
+            {
+                
+                IncDescripcion = "",
+                IncEstado = "",
+                IncFechaReporte = "",
+                IncFechaAtencion = "",
+                EmpDocumento = ""
+            };
+            _repoIncidente.AddIncidente(incidente);
+        }
+        
+        private static void BuscarIncidente(int idIncidente)
+        {
+            var incidente = _repoIncidente.GetIncidente(idIncidente);
+            Console.WriteLine(incidente.IncDescripcion+" "+incidente.IncEstado);
+        }
+        
+        private static void MostrarIncidentes()
+        {
+            IEnumerable<Incidente> incidentes = _repoIncidente.GetAllIncidentes();
+            foreach (var incidente in incidentes)
+            {
+                Console.WriteLine(incidente.IncDescripcion + " " + incidente.IncEstado);
+            }
+        }
+        private static void EliminarIncidente(int idIncidente)
+        {
+            _repoIncidente.DeleteIncidente(idIncidente);
+            Console.WriteLine("incidente Eliminado");
+        }
+        
     }
 }

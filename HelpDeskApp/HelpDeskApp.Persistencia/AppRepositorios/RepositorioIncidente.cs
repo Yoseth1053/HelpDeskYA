@@ -19,6 +19,35 @@ namespace HelpDeskApp.Persistencia
         {
             return _appContext.Incidentes;
         }
+         void IRepositorioIncidente.DeleteIncidente(int idIncidente)
+        {
+            var incidenteEncontrado = _appContext.Incidentes.Find(idIncidente);
+            if (incidenteEncontrado == null)
+                return;
+            _appContext.Incidentes.Remove(incidenteEncontrado);
+            _appContext.SaveChanges();
+        }
+        Incidente IRepositorioIncidente.GetIncidente(int idIncidente)
+        {
+            return _appContext.Incidentes.Find(idIncidente);
+        }
+        Incidente IRepositorioIncidente.UpdateIncidente(Incidente incidente)
+        {
+            var incidenteEncontrado = _appContext.Incidentes.Find(incidente.Id);
+            if (incidenteEncontrado != null)
+            {
+                
+                incidenteEncontrado.IncDescripcion = incidente.IncDescripcion;
+                incidenteEncontrado.IncEstado = incidente.IncEstado;
+                incidenteEncontrado.IncFechaReporte = incidente.IncFechaReporte;
+                incidenteEncontrado.IncFechaAtencion = incidente.IncFechaAtencion;
+                incidenteEncontrado.EmpDocumento = incidente.EmpDocumento;
+                _appContext.SaveChanges();
+            }
+            return incidenteEncontrado;
+        }
+
     }
+
         
     }

@@ -36,11 +36,9 @@ namespace HelpDeskApp.Persistencia
             var ambienteEncontrado = _appContext.Ambientes.Find(ambiente.Id);
             if (ambienteEncontrado != null)
             {
-                ambienteEncontrado.Id = ambiente.Id;
+                
                 ambienteEncontrado.AmbNombre = ambiente.AmbNombre;
                 ambienteEncontrado.AmbUbicacion = ambiente.AmbUbicacion;
-                
-                //ambienteEncontrado.RegistroRethus = ambiente.RegistroRethus;
                 _appContext.SaveChanges();
             }
             return ambienteEncontrado;

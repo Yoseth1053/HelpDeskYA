@@ -7,5 +7,8 @@ namespace HelpDeskApp.Persistencia
     {
         IEnumerable<Incidente> GetAllIncidentes();
         Incidente AddIncidente(Incidente incidente);
+        Incidente UpdateIncidente(Incidente incidente);
+        void DeleteIncidente(int idIncidente);    
+        Incidente GetIncidente(int idIncidente);
     }
 }
