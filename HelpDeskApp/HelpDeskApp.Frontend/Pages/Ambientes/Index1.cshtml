@@ -14,6 +14,10 @@
      
       <th scope="col">Nombre</th>
       <th scope="col">Ubicación</th>
+       <th scope="col">Opciones</th>
+       <th scope="col">Editar</th>
+
+      
 
     </tr>
   </thead>
@@ -24,7 +28,14 @@
           
           <td>@ambiente.AmbNombre</td>
           <td>@ambiente.AmbUbicacion</td>
+          <td>
+          <a class="btn btn-secondary" asp-page="./Details1" asp-route-id="@ambiente.Id">Detalle</a></td>
+          <td>
+            <a class="btn btn-secondary" asp-page="./Edit1" asp-route-id="@ambiente.Id">Editar</a>
+          </td>
          </tr>
+
     }
   </tbody>
 </table>
+<a class="btn btn-secondary" asp-page="/Index">Volver</a>

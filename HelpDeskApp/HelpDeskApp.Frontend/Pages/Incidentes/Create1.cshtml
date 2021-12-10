@@ -6,44 +6,44 @@
 <h1>Nuevo Incidente</h1>
 <form method="post">
 
-    <div class="row g-3">
+   <!-- <div class="row g-6">
         <div class="col">
         <label asp-for="incidente.Id">Id</label>
-        <input asp-for="incidente.Id" class="form-control">
-          </div>
-    </div>
-    <div class="row g-3">
+    </div> -->
+    <div class="row g-6">
         <div class="col">
-        <label asp-for="incidente.IncDescripcion">Descripcion</label>
-        <input asp-for="incidente.IncDescripcion" class="form-control">
-          </div>
+            <label asp-for="incidente.IncDescripcion">Descripcion</label>
+            <input asp-for="incidente.IncDescripcion" class="form-control">
+        </div>
     </div>
-
-    <div class="row g-3">
+    <div class="row g-6">
         <div class="col">
-        <label asp-for="incidente.IncEstado">Estado</label>
-        <input asp-for="incidente.IncEstado" class="form-control">
+            <label asp-for="incidente.IncEstado">Estado</label>
+            <select asp-for="incidente.IncEstado" asp-items="Html.GetEnumSelectList<EstadoIncidente>()" class="form-control"></select>
+        </div>
+    </div>
+   
+    <div class="row g-6">
+        <div class="col">
+            <label asp-for="incidente.IncFechaReporte">Fecha Reporte</label>
+            <input asp-for="incidente.IncFechaReporte" class="form-control">
         </div>
     </div>
 
-    <div class="row g-3">
+    <div class="row g-6">
         <div class="col">
-        <label asp-for="incidente.IncFechaReporte">Fecha Reporte</label>
-        <input asp-for="incidente.IncFechaReporte" class="form-control">
+            <label asp-for="incidente.IncFechaAtencion">Fecha de Atencion</label>
+            <input asp-for="incidente.IncFechaAtencion" class="form-control">
         </div>
     </div>
-    <div class="row g-3">
+
+    <div class="row g-6">
         <div class="col">
-        <label asp-for="incidente.IncFechaAtencion">Fecha de Atencion</label>
-        <input asp-for="incidente.IncFechaAtencion" class="form-control">
+            <label asp-for="incidente.EmpDocumento">Nombre de Empleado</label>
+            <input asp-for="incidente.EmpDocumento" class="form-control">
         </div>
     </div>
-    <div class="row g-3">
-        <div class="col">
-      <label asp-for="incidente.EmpDocumento">Nombre de Empleado</label>
-        <input asp-for="incidente.EmpDocumento" class="form-control">
-    </div>
-    </div>
+    
     <button type="submit" class="btn btn-primary">Crear Incidente</button>
 </form>
 <a class="btn btn-secondary" asp-page="./Index1">Volver</a>

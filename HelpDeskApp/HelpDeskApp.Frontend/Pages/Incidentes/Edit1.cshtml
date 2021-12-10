@@ -1,0 +1,39 @@
+﻿@page
+@using HelpDeskApp.Dominio;
+@model HelpDeskApp.frontend.Pages.Incidentes.Edit1Model
+@{
+}
+ <h1>Editar Incidentes</h1>
+ <form method="post">
+    <div class="form-group">
+        <label asp-for="incidente.Id"></label>
+        <input asp-for="incidente.Id" class="form-control" readonly>
+    </div>
+    <div class="form-group">
+        <label asp-for="incidente.IncDescripcion"></label>
+        <input asp-for="incidente.IncDescripcion" class="form-control">
+        <span asp-validation-for="incidente.IncDescripcion" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="incidente.IncEstado"></label>
+        <input asp-for="incidente.IncEstado" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label asp-for="incidente.IncFechaReporte"></label>
+        <input asp-for="incidente.IncFechaReporte" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label asp-for="incidente.IncFechaAtencion"></label>
+        <input asp-for="incidente.IncFechaAtencion" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label asp-for="incidente.EmpDocumento"></label>
+        <input asp-for="incidente.EmpDocumento" class="form-control">
+    </div>
+
+        <button type="submit" class="btn btn-primary">Editar</button>
+</form>
+<a class="btn btn-secondary" asp-page="./Index1">Volver</a>

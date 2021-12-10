@@ -22,6 +22,10 @@ namespace HelpDeskApp.Consola
             //BuscarAmbiente();
             //MostrarAmbientes();
             //EliminarAmbiente(1);
+            //AddIncidente();
+            //BuscarIncidente();
+            //MostrarIncidentes();
+            //EliminarIncidente(1);
 
 
         }

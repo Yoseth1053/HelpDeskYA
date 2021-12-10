@@ -1,5 +1,6 @@
 ﻿@page
 @using HelpDeskApp.Dominio
+@using HelpDeskApp.Persistencia
 @model HelpDeskApp.Frontend.Pages.Incidentes.Index1Model
 @{
 }
@@ -10,11 +11,13 @@
   <thead>
     <tr>
       <th scope="col">Id</th>
-      <th scope="col">IncDescripcion</th>
-      <th scope="col">IncEstado</th>
-      <th scope="col">IncFechaReporte</th>
-      <th scope="col">IncFechaAtencion</th>
-      <th scope="col">EmpDocumento</th>
+      <th scope="col">Descripcion</th>
+      <th scope="col">Estado</th>
+      <th scope="col">Fecha Reporte</th>
+      <th scope="col">Fecha Atencion</th>
+      <th scope="col">Empleado</th>
+      <th scope="col">Opciones</th>
+       <th scope="col">Editar</th>
     </tr>
   </thead>
   <tbody>
@@ -23,11 +26,14 @@
         <tr>
           <td>@incidente.Id</td>
           <td>@incidente.IncDescripcion</td>
-          <td>@incidente.IncEstado</td>
+          <td>(@incidente.IncEstado)</td>
           <td>@incidente.IncFechaReporte</td>
           <td>@incidente.IncFechaAtencion</td>
           <td>@incidente.EmpDocumento</td>
+          <td><a class="btn btn-secondary" asp-page="./Details1" asp-route-id="@incidente.Id">Detalle</a></td>
+          <td><a class="btn btn-secondary" asp-page="./Edit1" asp-route-id="@incidente.Id">Editar</a></td>
         </tr>
     }
   </tbody>
 </table>
+<a class="btn btn-secondary" asp-page="/Index">Volver</a>

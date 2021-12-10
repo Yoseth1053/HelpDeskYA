@@ -1,0 +1,27 @@
+﻿@page
+@using HelpDeskApp.Dominio;
+@model HelpDeskApp.frontend.Pages.Incidentes.Details1Model
+@{
+}
+    <h1>Detalle del Incidente</h1>
+<table class="table table-striped">
+    <tr>
+        <th scope="col">Descripcion</th>
+        <td>@Model.incidente.IncDescripcion</td>
+    </tr>
+    <tr>
+        <th scope="col">Estado</th>
+        <td>@Model.incidente.IncEstado</td>
+    </tr>
+        <tr>
+        <th scope="col">Fecha Reporte</th>
+        <td>@Model.incidente.IncFechaReporte</td>
+    </tr>
+        <tr>
+        <th scope="col">Fecha Atencion</th>
+        <td>@Model.incidente.IncFechaAtencion</td>
+    </tr>
+        <tr>
+        <th scope="col">Empleado</th>
+        <td>@Model.incidente.EmpDocumento</td>
+    </tr>
