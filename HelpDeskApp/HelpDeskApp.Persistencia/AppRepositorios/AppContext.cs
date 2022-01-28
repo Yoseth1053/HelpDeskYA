@@ -17,7 +17,7 @@ namespace HelpDeskApp.Persistencia
         {
             if(!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Initial Catalog=ProyectoFinalADSI2207208; Data Source=LAPTOP-14PD7JPN; Integrated Security=true");
+                optionsBuilder.UseSqlServer("Initial Catalog=ProyectoFinalADSI2207208; Data Source=MANAPRRCLFSD803\\SQLEXPRESS; Integrated Security=true");
             }
         }
     }

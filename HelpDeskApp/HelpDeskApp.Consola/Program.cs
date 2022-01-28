@@ -10,6 +10,7 @@ namespace HelpDeskApp.Consola
 
         private static IRepositorioEmpleado _repoEmpleado = new RepositorioEmpleado();
         private static IRepositorioAmbiente _repoAmbiente = new RepositorioAmbiente();
+        private static IRepositorioIncidente _repoIncidente = new RepositorioIncidente();
 
         static void Main(string[] args)
         {
@@ -99,9 +100,9 @@ namespace HelpDeskApp.Consola
             {
                 
                 IncDescripcion = "",
-                IncEstado = "",
-                IncFechaReporte = "",
-                IncFechaAtencion = "",
+                IncEstado = EstadoIncidente.EnProceso,
+                IncFechaReporte = new DateTime(2022/08/15),
+                IncFechaAtencion = new DateTime(2022/08/15),
                 EmpDocumento = ""
             };
             _repoIncidente.AddIncidente(incidente);
